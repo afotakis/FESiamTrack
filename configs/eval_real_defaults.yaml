@@ -1,0 +1,20 @@
+hydra:
+  run:
+    dir: outputs/${model.name}/${now:%Y-%m-%d_%H%M%S}
+
+gt_path: /path/to/gt_tracks
+running_locally: False
+
+
+weights_path: ~  # path to a Lightning checkpoint (.ckpt)
+representation: time_surfaces_v2_5 # [time_surfaces_v2_5 voxel_grids_5 event_stacks_5]
+patch_size: 31
+visualize: False
+dt_track_vis: 0.2
+
+# Composing nested config with default
+defaults:
+  - model: fe_siamtrack # [fe_siamtrack, ddft]
+# Pytorch lightning trainer's argument
+trainer:
+  gpus: [0]

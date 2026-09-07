@@ -1,0 +1,7 @@
+name: fe_siamtrack
+
+_target_: models.fe_siamtrack.TrackerNetCSiameseSeperateC0
+patch_size: 31
+feature_dim: 384
+defaults:
+  - /optim/adam.yaml@optimizer

@@ -1,0 +1,7 @@
+name: ddft
+
+_target_: models.ddft.TrackerNetC
+patch_size: 31
+feature_dim: 384
+defaults:
+  - /optim/adam.yaml@optimizer
